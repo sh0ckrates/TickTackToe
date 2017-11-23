@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TicTacToe.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TicTacToe">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="backgroundColor">White</Color>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10"></Setter>
+                <Setter Property="BackgroundColor" Value="DarkSalmon"></Setter>
+                <Setter Property="FontSize" Value="Large"></Setter>
+            </Style>
+            <Style x:Key="lblStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Yellow"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+    <Grid Margin="0,40,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="*" />
+            <ColumnDefinition Width ="*" />
+            <ColumnDefinition Width ="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"   Grid.Column="0" Text="You (X)" Margin="25,5,0,0" />
+        <Label Grid.Row="0" Grid.Column="0" Text="0" HorizontalTextAlignment="Center" Margin="0,27,20,0"/>
+        <Label Grid.Row="0"  Grid.Column="2" Text="Opponent (O)" Margin="5"  HorizontalTextAlignment="End"/>
+        <Label Grid.Row="0" Grid.Column="2" Text="0" HorizontalTextAlignment="Center" Margin="0,30,0,0"/>
+
+        <Label Grid.Row="0"  Grid.Column="1" x:Name="ResultLbl" Text="CONGRATS TO THE WINNER!
+               Play again?" HorizontalTextAlignment="Center" IsVisible="False" Style="{StaticResource lblStyle}"/>
+        <Button Grid.Row="0"  Grid.Column="1" x:Name="replayBtn" Text="Yes" Margin="0,55,66,0" BackgroundColor="Chocolate" IsVisible="false" Clicked="ReplayBtn_OnClicked"/>
+        <Button Grid.Row="0"  Grid.Column="1" x:Name="closeBtn" Text="No" Margin="66,55,0,0" IsVisible="false" BackgroundColor="BurlyWood" Clicked="CloseBtn_OnClicked"/>
+
+
+
+        <Button x:Name="Button1"  Grid.Row="1" Grid.Column="0" Clicked="button_Clicked" ClassId="1"/>
+        <Button x:Name="Button2"  Grid.Row="1" Grid.Column="1" Clicked="button_Clicked" ClassId="2"/>
+        <Button x:Name="Button3"  Grid.Row="1" Grid.Column="2" Clicked="button_Clicked" ClassId="3"/>
+        <Button x:Name="Button4"  Grid.Row="2" Grid.Column="0" Clicked="button_Clicked" ClassId="4"/>
+        <Button x:Name="Button5"  Grid.Row="2" Grid.Column="1" Clicked="button_Clicked" ClassId="5"/>
+        <Button x:Name="Button6"  Grid.Row="2" Grid.Column="2" Clicked="button_Clicked" ClassId="6"/>
+        <Button x:Name="Button7"  Grid.Row="3" Grid.Column="0" Clicked="button_Clicked" ClassId="7"/>
+        <Button x:Name="Button8"  Grid.Row="3" Grid.Column="1" Clicked="button_Clicked" ClassId="8"/>
+        <Button x:Name="Button9"  Grid.Row="3" Grid.Column="2" Clicked="button_Clicked" ClassId="9"/>
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
